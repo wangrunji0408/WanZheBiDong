@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "2dfd6860-fffc-46cc-a0ef-9abf76e43284",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "奏章ui示意图2": {
+      "ver": "1.0.3",
+      "uuid": "864ab21b-910f-4433-b1cc-512b1641b4be",
+      "rawTextureUuid": "2dfd6860-fffc-46cc-a0ef-9abf76e43284",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1920,
+      "height": 1080,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

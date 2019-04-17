@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "959acec8-d77a-4bc1-9563-d352c026346c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "书房张居正": {
+      "ver": "1.0.3",
+      "uuid": "3a0c365a-2058-445c-9101-1cb21b0732d9",
+      "rawTextureUuid": "959acec8-d77a-4bc1-9563-d352c026346c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1920,
+      "height": 1080,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

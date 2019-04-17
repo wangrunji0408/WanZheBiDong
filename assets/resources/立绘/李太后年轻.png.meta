@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "4ee34468-1bc9-42f9-98dd-1d6667aeff64",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "李太后年轻": {
+      "ver": "1.0.3",
+      "uuid": "a4dc8f88-94ba-42d6-821b-eb1ac838327b",
+      "rawTextureUuid": "4ee34468-1bc9-42f9-98dd-1d6667aeff64",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -322.5,
+      "offsetY": -367,
+      "trimX": 533,
+      "trimY": 734,
+      "width": 209,
+      "height": 345,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

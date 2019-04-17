@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "2ab65962-bb65-41e2-add7-89c1770d7e9e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "内阁0": {
+      "ver": "1.0.3",
+      "uuid": "ba2dae56-c10b-40e4-826d-590d796e1a62",
+      "rawTextureUuid": "2ab65962-bb65-41e2-add7-89c1770d7e9e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 887,
+      "offsetY": 281,
+      "trimX": 1821,
+      "trimY": 228,
+      "width": 52,
+      "height": 62,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
