@@ -1,4 +1,5 @@
 import { ChapterInfo } from "./Data";
+import UIController from "./UIController";
 
 const {ccclass, property} = cc._decorator;
 
@@ -19,6 +20,9 @@ export default class ChapterUIController extends cc.Component {
 
     @property(cc.Label)
     feedbackLabel: cc.Label = null;
+
+    // assigned by UIController
+    uiController: UIController = null;
 
     chapter: ChapterInfo;
 
@@ -46,7 +50,7 @@ export default class ChapterUIController extends cc.Component {
         this.feedbackLabel.node.active = true;
         this.feedbackLabel.string = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
         this.chose = true;
-        // TODO: effect
+        this.uiController.goNext(choice);
     }
 
     // stage 3: exit

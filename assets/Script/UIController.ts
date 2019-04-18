@@ -36,6 +36,7 @@ export default class UIController extends cc.Component {
 
     start () {
         this.dialogUIController.uiController = this;
+        this.chapterUIController.uiController = this;
         let scenes = CSVToDicts(this.dialogData.text) as unknown[] as RawDialogInfo[];
         let chapters = CSVToDicts(this.chapterData.text) as unknown[] as RawChapterInfo[];
         this.gameManager = new GameManager(scenes, chapters);

@@ -40,6 +40,8 @@ export default class GameManager {
 				this.currentID = scene.nextSceneID;
 			}
 		} else if(scene instanceof ChapterInfo) {
+			let effect = choice === 0? scene.result1: scene.result2;
+			this.numbers.apply(effect);
 			this.currentID = scene.nextID;
 		}
 		console.debug(`goto: ${this.currentID}`);
