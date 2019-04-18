@@ -5,7 +5,16 @@
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
-  "platformSettings": {},
+  "platformSettings": {
+    "web": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 80
+        }
+      ]
+    }
+  },
   "subMetas": {
     "登基": {
       "ver": "1.0.3",
