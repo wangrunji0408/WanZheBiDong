@@ -57,6 +57,11 @@ export default class DialogUIController extends cc.Component {
     }
 
     private updateLihui(name: string) {
+        if(name === '太后') {
+            name = '李太后年轻';
+        } else if(name === '大臣') {
+            name = '大臣1';
+        }
         let lihuiPath = "立绘/" + name;
         cc.loader.loadRes(lihuiPath, cc.SpriteFrame, (err, spriteFrame) => {
             if(err) {
