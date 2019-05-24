@@ -33,17 +33,21 @@ export default class GameManager {
 			if(scene.nextSceneID == null) {
 				// choice
 				let button = scene.buttons[choice];
-				this.currentID = button.nextSceneID;
 				this.numbers.apply(button.effect);
+				this.goTo(button.nextSceneID);
 			} else {
 				// no choice
-				this.currentID = scene.nextSceneID;
+				this.goTo(scene.nextSceneID);
 			}
 		} else if(scene instanceof ChapterInfo) {
 			let effect = choice === 0? scene.result1: scene.result2;
 			this.numbers.apply(effect);
-			this.currentID = scene.nextID;
+			this.goTo(scene.nextID);			
 		}
+	}
+
+	goTo(sceneID: number) {
+		this.currentID = sceneID;
 		console.debug(`goto: ${this.currentID}`);
 		// check new sceneID
 		if(!(this.currentID in this.scenes)) {

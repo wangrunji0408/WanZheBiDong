@@ -32,6 +32,9 @@ export default class UIController extends cc.Component {
     @property(cc.TextAsset)
     chapterData: cc.TextAsset = null;
 
+    @property(cc.Label)
+    debugSceneID: cc.Label = null;
+
     gameManager: GameManager = null;
 
     start () {
@@ -48,9 +51,21 @@ export default class UIController extends cc.Component {
         this.updateUI();
     }
 
+    goTo(sceneID: number) {
+        this.gameManager.goTo(sceneID);
+        this.updateUI();
+    }
+
+    onDebugSceneIDEntered(editBox: cc.EditBox, _customEventData: string) {
+        console.debug('debug scene ID entered');
+        let sceneID = parseInt(editBox.string);
+        this.goTo(sceneID);
+    }
+
     updateUI() {
         let scene = this.gameManager.get();
         console.debug(typeof scene);
+        this.debugSceneID.string = this.gameManager.currentID.toString();
         if(scene instanceof DialogInfo) {
             this.dialogUIController.updateUI(scene);
             this.updateCG(scene.imageName);
