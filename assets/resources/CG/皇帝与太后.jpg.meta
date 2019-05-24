@@ -6,11 +6,11 @@
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "platformSettings": {
-    "web": {
+    "default": {
       "formats": [
         {
           "name": "jpg",
-          "quality": 80
+          "quality": 50
         }
       ]
     }

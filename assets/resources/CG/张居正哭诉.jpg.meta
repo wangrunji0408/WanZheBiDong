@@ -5,7 +5,16 @@
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
-  "platformSettings": {},
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
   "subMetas": {
     "张居正哭诉": {
       "ver": "1.0.3",
