@@ -27,6 +27,14 @@ export class NumberSystem {
 		this.NG += effect.NG? effect.NG: 0;
 		this.SW += effect.SW? effect.SW: 0;
 	}
+
+	constructor() {
+		// TODO: load init value from table
+		this.SS = 50;
+		this.JS = 50;
+		this.NG = 50;
+		this.SW = 50;
+	}
 }
 
 export class ButtonInfo {
