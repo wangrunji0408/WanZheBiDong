@@ -39,6 +39,7 @@ export class DialogInfo {
 	sceneID: number;
 	imageName: string;
 	speaker: string;
+	avatar: string;
 	text: string;
 	nextSceneID?: number;
 	buttons: ButtonInfo[];
@@ -48,6 +49,7 @@ export class DialogInfo {
 		this.sceneID = parseInt(info.sceneID);
 		this.imageName = info.imageName;
 		this.speaker = info.speaker;
+		this.avatar = info.avatar;
 		this.text = info.text;
 		this.isSceneOver = info.isSceneOver === '1';
 

@@ -6,6 +6,7 @@ export class RawDialogInfo {
 	sceneID: string;
 	imageName: string;
 	speaker: string;
+	avatar: string;
 	text: string;
 	hasChoice: string;
 	buttonText1: string;
