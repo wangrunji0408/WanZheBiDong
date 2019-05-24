@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "2b4fe661-7bcb-4c4e-bdea-eed37623b9cc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "陈太后": {
+      "ver": "1.0.3",
+      "uuid": "3d8f7be0-43f8-4618-b481-17f54661410b",
+      "rawTextureUuid": "2b4fe661-7bcb-4c4e-bdea-eed37623b9cc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -429,
+      "offsetY": -364.5,
+      "trimX": 415,
+      "trimY": 729,
+      "width": 232,
+      "height": 350,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

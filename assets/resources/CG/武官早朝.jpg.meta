@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "107ce83a-3ab6-4ebd-b384-0689fceea17e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "武官早朝": {
+      "ver": "1.0.3",
+      "uuid": "206fb44e-9d2c-4aba-9d21-dd400459751e",
+      "rawTextureUuid": "107ce83a-3ab6-4ebd-b384-0689fceea17e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1920,
+      "height": 1080,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

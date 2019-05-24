@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "9d1b8029-3fb6-4e15-a5fc-77f1297b193b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "内阁大官": {
+      "ver": "1.0.3",
+      "uuid": "2632cd4a-41af-4f17-aa5a-c0e05b53c70e",
+      "rawTextureUuid": "9d1b8029-3fb6-4e15-a5fc-77f1297b193b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -807.5,
+      "offsetY": -360,
+      "trimX": 26,
+      "trimY": 720,
+      "width": 253,
+      "height": 359,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

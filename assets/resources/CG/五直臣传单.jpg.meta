@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "90c89fe7-1705-4435-a447-ecbd6063c0c1",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "五直臣传单": {
+      "ver": "1.0.3",
+      "uuid": "f376284d-2840-4064-8b68-eea45bb4038b",
+      "rawTextureUuid": "90c89fe7-1705-4435-a447-ecbd6063c0c1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1920,
+      "height": 1080,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
