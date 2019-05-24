@@ -32,8 +32,8 @@ export default class UIController extends cc.Component {
     @property(cc.TextAsset)
     chapterData: cc.TextAsset = null;
 
-    @property(cc.Label)
-    debugSceneID: cc.Label = null;
+    @property(cc.EditBox)
+    debugSceneID: cc.EditBox = null;
 
     gameManager: GameManager = null;
 
@@ -44,6 +44,14 @@ export default class UIController extends cc.Component {
         let chapters = CSVToDicts(this.chapterData.text) as unknown[] as RawChapterInfo[];
         this.gameManager = new GameManager(scenes, chapters);
         this.updateUI();
+    }
+
+    // move to next state
+    // update number UI
+    // but don't update other UI
+    choose(choice: number) {
+        this.gameManager.goNext(choice);
+        this.numberUIController.updateUI(this.gameManager.numbers);
     }
 
     goNext(choice: number) {
@@ -64,10 +72,10 @@ export default class UIController extends cc.Component {
 
     updateUI() {
         let scene = this.gameManager.get();
-        console.debug(typeof scene);
         this.debugSceneID.string = this.gameManager.currentID.toString();
         if(scene instanceof DialogInfo) {
             this.dialogUIController.updateUI(scene);
+            this.chapterUIController.exit();
             this.updateCG(scene.imageName);
         } else if(scene instanceof ChapterInfo) {
             this.chapterUIController.activate(scene);

@@ -21,6 +21,12 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Label)
     feedbackLabel: cc.Label = null;
 
+    @property(cc.Button)
+    choice1Button: cc.Button = null;
+
+    @property(cc.Button)
+    choice2Button: cc.Button = null;
+
     // assigned by UIController
     uiController: UIController = null;
 
@@ -38,6 +44,8 @@ export default class ChapterUIController extends cc.Component {
         this.textLabel.string = chapter.text;
         this.choice1Label.string = chapter.option1;
         this.choice2Label.string = chapter.option2;
+        this.choice1Button.interactable = true;
+        this.choice2Button.interactable = true;
         this.feedbackLabel.node.active = false;
     }
 
@@ -49,8 +57,11 @@ export default class ChapterUIController extends cc.Component {
         let choice = parseInt(customEventData);
         this.feedbackLabel.node.active = true;
         this.feedbackLabel.string = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
+        console.debug(this.feedbackLabel.string);
+        this.choice1Button.interactable = false;
+        this.choice2Button.interactable = false;
         this.chose = true;
-        this.uiController.goNext(choice);
+        this.uiController.choose(choice);
     }
 
     // stage 3: exit
@@ -58,6 +69,10 @@ export default class ChapterUIController extends cc.Component {
         if(!this.chose) {
             return;
         }
+        this.uiController.updateUI();
+    }
+
+    exit() {
         this.node.active = false;
     }
 }
