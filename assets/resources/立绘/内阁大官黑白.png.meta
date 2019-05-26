@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "c96d1437-1a6b-4c20-8b9b-66e318671e70",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "内阁大官黑白": {
+      "ver": "1.0.3",
+      "uuid": "47b6ee95-8006-4dbf-a7c1-52cd36cc7e09",
+      "rawTextureUuid": "c96d1437-1a6b-4c20-8b9b-66e318671e70",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -807.5,
+      "offsetY": -360,
+      "trimX": 26,
+      "trimY": 720,
+      "width": 253,
+      "height": 359,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
