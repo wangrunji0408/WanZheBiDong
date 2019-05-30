@@ -1,19 +1,23 @@
-import { DialogInfo, NumberSystem, ChapterInfo } from "./Data";
-import { RawDialogInfo, RawChapterInfo } from "./TableData";
+import { DialogInfo, NumberSystem, ChapterInfo, QuestionInfo } from "./Data";
+import { RawDialogInfo, RawChapterInfo, RawQuestionInfo } from "./TableData";
 
 /// Game logic state machine
 export default class GameManager {
-	scenes: { [id: number]: DialogInfo | ChapterInfo } = {};
+	scenes: { [id: number]: DialogInfo | ChapterInfo | QuestionInfo } = {};
 	currentID: number = 1;
 	numbers: NumberSystem = new NumberSystem();
 
-	constructor(scenes: RawDialogInfo[], chapters: RawChapterInfo[]) {
+	constructor(scenes: RawDialogInfo[], chapters: RawChapterInfo[], questions: RawQuestionInfo[]) {
 		for(let rawInfo of scenes) {
 			let info = new DialogInfo(rawInfo);
 			this.scenes[info.sceneID] = info;
 		}
 		for(let rawInfo of chapters) {
 			let info = new ChapterInfo(rawInfo);
+			this.scenes[info.sceneID] = info;
+		}
+		for(let rawInfo of questions) {
+			let info = new QuestionInfo(rawInfo);
 			this.scenes[info.sceneID] = info;
 		}
 		console.log(this.scenes);
@@ -23,7 +27,7 @@ export default class GameManager {
 		this.currentID = 1;
 	}
 
-	get(): DialogInfo | ChapterInfo {
+	get(): DialogInfo | ChapterInfo | QuestionInfo {
 		return this.scenes[this.currentID];
 	}
 
@@ -42,6 +46,12 @@ export default class GameManager {
 		} else if(scene instanceof ChapterInfo) {
 			let effect = choice === 0? scene.result1: scene.result2;
 			this.numbers.apply(effect);
+			this.goTo(scene.nextID);			
+		} else if(scene instanceof QuestionInfo) {
+			// effect only corrent
+			if(choice === 0) {
+				this.numbers.apply(scene.result);
+			}
 			this.goTo(scene.nextID);			
 		}
 	}

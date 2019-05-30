@@ -29,11 +29,11 @@ export class NumberSystem {
 	}
 
 	constructor() {
-		// TODO: load init value from table
+		// Hard code
 		this.SS = 50;
-		this.JS = 50;
+		this.JS = 100;
 		this.NG = 50;
-		this.SW = 50;
+		this.SW = 25;
 	}
 }
 
@@ -129,5 +129,29 @@ export class ChapterInfo {
 		this.result2 = Effect.parse(info.result2);
 		this.feedback2 = info.feedback2;
 		this.nextID = parseInt(info.nextID);
+	}
+}
+
+export class QuestionInfo {
+	sceneID: number;
+	imageName: string;
+	question: string;
+	option1: string;
+	option2: string;
+	option3: string;
+	option4: string;
+	result: Effect;
+	nextID: number;
+
+	constructor(info: table.RawQuestionInfo) {
+		this.sceneID = parseInt(info.sceneID);
+		this.imageName = info.imageName;
+		this.question = info.question;
+		this.option1 = info.option1;
+		this.option2 = info.option2;
+		this.option3 = info.option3;
+		this.option4 = info.option4;
+		this.result = Effect.parse(info.result);
+		this.nextID = parseInt(info.nextID);		
 	}
 }
