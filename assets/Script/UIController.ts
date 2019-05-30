@@ -44,6 +44,9 @@ export default class UIController extends cc.Component {
 
     gameManager: GameManager = null;
 
+    // set by choose scene
+    static initSceneID: number = 1;
+
     start () {
         this.dialogUIController.uiController = this;
         this.chapterUIController.uiController = this;
@@ -52,6 +55,8 @@ export default class UIController extends cc.Component {
         let chapters = CSVToDicts(this.chapterData.text) as unknown[] as RawChapterInfo[];
         let questions = CSVToDicts(this.questionData.text) as unknown[] as RawQuestionInfo[];
         this.gameManager = new GameManager(scenes, chapters, questions);
+        this.gameManager.goTo(UIController.initSceneID);
+        UIController.initSceneID = 1;   // reset init ID
         this.updateUI();
     }
 
