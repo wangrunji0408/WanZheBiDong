@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "37239dff-9459-48ff-897f-1fe53b4a5fa7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "烧毁倭船": {
+      "ver": "1.0.3",
+      "uuid": "312a250a-e5ee-4396-aab8-8ec6a90d2fd8",
+      "rawTextureUuid": "37239dff-9459-48ff-897f-1fe53b4a5fa7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "3ae34239-c4a3-4dfd-b307-24e557e3233f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "汇报战况": {
+      "ver": "1.0.3",
+      "uuid": "749d10e2-89ed-430b-8d04-178777700869",
+      "rawTextureUuid": "3ae34239-c4a3-4dfd-b307-24e557e3233f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

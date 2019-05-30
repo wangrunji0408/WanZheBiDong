@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "eb700711-8966-47af-9d74-1aa0f6f35e5b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "书房申时行": {
+      "ver": "1.0.3",
+      "uuid": "3de1c77c-6602-465c-a2cd-b33a670881bb",
+      "rawTextureUuid": "eb700711-8966-47af-9d74-1aa0f6f35e5b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

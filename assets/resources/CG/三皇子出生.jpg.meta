@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "692d829b-7ffc-4307-99d9-357069aac5da",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "三皇子出生": {
+      "ver": "1.0.3",
+      "uuid": "72414822-69e3-4ebe-97f1-b1646059c963",
+      "rawTextureUuid": "692d829b-7ffc-4307-99d9-357069aac5da",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

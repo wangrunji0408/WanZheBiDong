@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "f547a9bd-ad6e-42b7-81fe-c089f2869b45",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "击败杨应龙": {
+      "ver": "1.0.3",
+      "uuid": "260e4c33-25f1-4f2e-afcb-7a4040072412",
+      "rawTextureUuid": "f547a9bd-ad6e-42b7-81fe-c089f2869b45",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
