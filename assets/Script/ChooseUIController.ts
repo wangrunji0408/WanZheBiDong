@@ -10,4 +10,8 @@ export default class ChooseUIController extends cc.Component {
         UIController.initSceneID = sceneID;
         cc.director.loadScene("dialog");
     }
+
+    onBackButtonClicked(_event: TouchEvent, _customEventData: string) {
+        cc.director.loadScene("main");
+    }
 }

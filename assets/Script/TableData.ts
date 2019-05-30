@@ -32,9 +32,9 @@ export class RawNumberInfo {
 	lowEndID: string;
 }
 
-/// A line in 'end.csv'
+/// A line in 'ending.csv'
 /// 结局表
-export class RawEndInfo {
+export class RawEndingInfo {
 	endID: string;
 	description: string;
 	comment: string;

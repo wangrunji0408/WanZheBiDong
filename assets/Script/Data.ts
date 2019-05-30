@@ -28,6 +28,23 @@ export class NumberSystem {
 		this.SW += effect.SW? effect.SW: 0;
 	}
 
+	getEnding(): number {
+		// Hard code
+		if(this.SS > 100)
+			return 7001;
+		if(this.SS <= 0)
+			return 7002;
+		if(this.JS <= 0)
+			return 7003;
+		if(this.NG > 100)
+			return 7004;
+		if(this.NG <= 0)
+			return 7005;
+		if(this.SW <= 0)
+			return 7006;
+		return 0;
+	}
+
 	constructor() {
 		// Hard code
 		this.SS = 50;
@@ -153,5 +170,15 @@ export class QuestionInfo {
 		this.option4 = info.option4;
 		this.result = Effect.parse(info.result);
 		this.nextID = parseInt(info.nextID);		
+	}
+}
+
+export class EndingInfo {
+	endID: number;
+	description: string;
+
+	constructor(info: table.RawEndingInfo) {
+		this.endID = parseInt(info.endID);
+		this.description = info.description;
 	}
 }

@@ -3,9 +3,10 @@ import NumberUIController from "./NumberUIController";
 import ChapterUIController from "./ChapterUIController";
 import DialogUIController from "./DialogUIController";
 import QuestionUIController from "./QuestionUIController";
+import EndingUIController from "./EndingUIController";
 import { CSVToDicts } from "./Utils";
-import { RawDialogInfo, RawChapterInfo, RawQuestionInfo } from "./TableData";
-import { DialogInfo, ChapterInfo, QuestionInfo } from "./Data";
+import { RawDialogInfo, RawChapterInfo, RawQuestionInfo, RawEndingInfo, RawNumberInfo } from "./TableData";
+import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo } from "./Data";
 
 const {ccclass, property} = cc._decorator;
 
@@ -39,6 +40,12 @@ export default class UIController extends cc.Component {
     @property(cc.TextAsset)
     questionData: cc.TextAsset = null;
 
+    @property(cc.TextAsset)
+    numberData: cc.TextAsset = null;
+
+    @property(cc.TextAsset)
+    endingData: cc.TextAsset = null;
+
     @property(cc.EditBox)
     debugSceneID: cc.EditBox = null;
 
@@ -51,10 +58,14 @@ export default class UIController extends cc.Component {
         this.dialogUIController.uiController = this;
         this.chapterUIController.uiController = this;
         this.questionUIController.uiController = this;
+
         let scenes = CSVToDicts(this.dialogData.text) as unknown[] as RawDialogInfo[];
         let chapters = CSVToDicts(this.chapterData.text) as unknown[] as RawChapterInfo[];
         let questions = CSVToDicts(this.questionData.text) as unknown[] as RawQuestionInfo[];
-        this.gameManager = new GameManager(scenes, chapters, questions);
+        let numbers = CSVToDicts(this.numberData.text) as unknown[] as RawNumberInfo[];        
+        let endings = CSVToDicts(this.endingData.text) as unknown[] as RawEndingInfo[];
+        
+        this.gameManager = new GameManager(scenes, chapters, questions, numbers, endings);
         this.gameManager.goTo(UIController.initSceneID);
         UIController.initSceneID = 1;   // reset init ID
         this.updateUI();
@@ -101,6 +112,9 @@ export default class UIController extends cc.Component {
             this.chapterUIController.activate(scene);
         } else if(scene instanceof QuestionInfo) {
             this.questionUIController.activate(scene);
+        } else if(scene instanceof EndingInfo) {
+            EndingUIController.ending = scene;
+            cc.director.loadScene("ending");
         }
         this.numberUIController.updateUI(this.gameManager.numbers);
     }

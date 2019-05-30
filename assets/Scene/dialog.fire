@@ -7240,6 +7240,12 @@
     "questionData": {
       "__uuid__": "c4f68890-2c2a-46d4-b0ba-bb658131454e"
     },
+    "numberData": {
+      "__uuid__": "c85f5fd3-f7ce-4d29-89df-02ca0aca8d54"
+    },
+    "endingData": {
+      "__uuid__": "b68329d3-7ad3-487d-a85a-22689c767efe"
+    },
     "debugSceneID": {
       "__id__": 158
     },

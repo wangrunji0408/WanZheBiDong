@@ -1,13 +1,21 @@
-import { DialogInfo, NumberSystem, ChapterInfo, QuestionInfo } from "./Data";
-import { RawDialogInfo, RawChapterInfo, RawQuestionInfo } from "./TableData";
+import { DialogInfo, NumberSystem, ChapterInfo, QuestionInfo, EndingInfo } from "./Data";
+import { RawDialogInfo, RawChapterInfo, RawQuestionInfo, RawEndingInfo, RawNumberInfo } from "./TableData";
+
+type State = DialogInfo | ChapterInfo | QuestionInfo | EndingInfo;
 
 /// Game logic state machine
 export default class GameManager {
-	scenes: { [id: number]: DialogInfo | ChapterInfo | QuestionInfo } = {};
+	scenes: { [id: number]: State } = {};
 	currentID: number = 1;
 	numbers: NumberSystem = new NumberSystem();
 
-	constructor(scenes: RawDialogInfo[], chapters: RawChapterInfo[], questions: RawQuestionInfo[]) {
+	constructor(
+		scenes: RawDialogInfo[], 
+		chapters: RawChapterInfo[], 
+		questions: RawQuestionInfo[],
+		numbers: RawNumberInfo[],
+		endings: RawEndingInfo[],
+	) {
 		for(let rawInfo of scenes) {
 			let info = new DialogInfo(rawInfo);
 			this.scenes[info.sceneID] = info;
@@ -20,6 +28,10 @@ export default class GameManager {
 			let info = new QuestionInfo(rawInfo);
 			this.scenes[info.sceneID] = info;
 		}
+		for(let rawInfo of endings) {
+			let info = new EndingInfo(rawInfo);
+			this.scenes[info.endID] = info;
+		}
 		console.log(this.scenes);
 	}
 
@@ -27,7 +39,7 @@ export default class GameManager {
 		this.currentID = 1;
 	}
 
-	get(): DialogInfo | ChapterInfo | QuestionInfo {
+	get(): State {
 		return this.scenes[this.currentID];
 	}
 
@@ -53,6 +65,11 @@ export default class GameManager {
 				this.numbers.apply(scene.result);
 			}
 			this.goTo(scene.nextID);			
+		}
+		// check number
+		let ending = this.numbers.getEnding();
+		if(ending !== 0) {
+			this.goTo(ending);
 		}
 	}
 
