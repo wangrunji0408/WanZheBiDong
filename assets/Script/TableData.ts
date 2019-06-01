@@ -36,7 +36,10 @@ export class RawNumberInfo {
 /// 结局表
 export class RawEndingInfo {
 	endID: string;
+	imageName: string;
+	title: string;
 	description: string;
+	hint: string;
 	comment: string;
 }
 

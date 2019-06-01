@@ -95,11 +95,6 @@ export default class UIController extends cc.Component {
         this.goTo(sceneID);
     }
 
-    onMenuButtonClicked(_event: TouchEvent, _customEventData: string) {
-        // TODO: menu
-        cc.director.loadScene('main');
-    }
-
     updateUI() {
         let scene = this.gameManager.get();
         this.debugSceneID.string = this.gameManager.currentID.toString();

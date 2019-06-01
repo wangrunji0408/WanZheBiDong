@@ -175,10 +175,16 @@ export class QuestionInfo {
 
 export class EndingInfo {
 	endID: number;
+	imageName: string;
+	title: string;
 	description: string;
+	hint: string;
 
 	constructor(info: table.RawEndingInfo) {
 		this.endID = parseInt(info.endID);
+		this.imageName = info.imageName;
+		this.title = info.title;
 		this.description = info.description;
+		this.hint = info.hint;
 	}
 }
