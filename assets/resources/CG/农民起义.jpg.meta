@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "f426039a-a6a7-49c8-81b5-8f7de402104a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "农民起义": {
+      "ver": "1.0.3",
+      "uuid": "c2228afa-699f-4062-8f05-8f51751df33e",
+      "rawTextureUuid": "f426039a-a6a7-49c8-81b5-8f7de402104a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

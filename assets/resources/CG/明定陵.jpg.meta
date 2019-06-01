@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "65bc3a4d-87e5-4d88-8f09-dff0f51cd09e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "明定陵": {
+      "ver": "1.0.3",
+      "uuid": "427eb252-f2a7-4553-83cf-f19ef368be21",
+      "rawTextureUuid": "65bc3a4d-87e5-4d88-8f09-dff0f51cd09e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

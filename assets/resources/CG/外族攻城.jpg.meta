@@ -1,0 +1,41 @@
+{
+  "ver": "2.3.0",
+  "uuid": "40b4ff9d-123c-4263-a6b6-4288a45511c2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {
+    "default": {
+      "formats": [
+        {
+          "name": "jpg",
+          "quality": 50
+        }
+      ]
+    }
+  },
+  "subMetas": {
+    "外族攻城": {
+      "ver": "1.0.3",
+      "uuid": "ea7eab99-9c45-454c-b4db-c4f8665837e1",
+      "rawTextureUuid": "40b4ff9d-123c-4263-a6b6-4288a45511c2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1919,
+      "height": 1080,
+      "rawWidth": 1919,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
