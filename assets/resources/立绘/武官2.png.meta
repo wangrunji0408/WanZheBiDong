@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "b2f73bd9-592b-4faa-924f-46f411b6ee65",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "武官2": {
+      "ver": "1.0.3",
+      "uuid": "0c461652-6fc7-4550-adcc-e7b4a5e659e9",
+      "rawTextureUuid": "b2f73bd9-592b-4faa-924f-46f411b6ee65",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -340,
+      "offsetY": -353.5,
+      "trimX": 472,
+      "trimY": 707,
+      "width": 296,
+      "height": 372,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
