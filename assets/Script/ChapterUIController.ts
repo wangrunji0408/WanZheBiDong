@@ -33,6 +33,12 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Button)
     choice2Button: cc.Button = null;
 
+    @property(cc.Node)
+    dialogNode: cc.Node = null;
+
+    @property(cc.Label)
+    dialogLabel: cc.Label = null;
+
     // assigned by UIController
     uiController: UIController = null;
 
@@ -62,6 +68,12 @@ export default class ChapterUIController extends cc.Component {
             return;
         }
         let choice = parseInt(customEventData);
+        // force choose
+        if(this.chapter.option !== null && choice !== this.chapter.option) {
+            let reply = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
+            this.showDialog(reply);
+            return;
+        }
         this.feedbackLabel.node.active = true;
         this.feedbackLabel.string = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
         this.commentLabel.string = choice === 0? this.chapter.option1: this.chapter.option2;
@@ -100,5 +112,14 @@ export default class ChapterUIController extends cc.Component {
             node.setPosition(-i * DELTA_X, 0); 
             node.getComponent(cc.Label).string = s;
         });
+    }
+
+    showDialog(reply: string) {
+        this.dialogNode.active = true;
+        this.dialogLabel.string = reply;
+    }
+
+    onDialogClicked(_event: TouchEvent, _: string) {
+        this.dialogNode.active = false;
     }
 }

@@ -58,6 +58,7 @@ export class RawChapterInfo {
 	result2: string;
 	feedback2: string;
 	nextID: string;
+	option: string;
 	comment: string;
 }
 

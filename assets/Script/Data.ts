@@ -131,6 +131,7 @@ export class ChapterInfo {
 	option2: string;
 	result2: Effect;
 	feedback2: string;
+	option: number;
 	nextID: number;
 
 	constructor(info: table.RawChapterInfo) {
@@ -145,6 +146,7 @@ export class ChapterInfo {
 		this.option2 = info.option2;
 		this.result2 = Effect.parse(info.result2);
 		this.feedback2 = info.feedback2;
+		this.option = info.option === ''? null: parseInt(info.option) - 1;
 		this.nextID = parseInt(info.nextID);
 	}
 }
