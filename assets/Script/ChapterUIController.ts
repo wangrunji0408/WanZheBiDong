@@ -9,8 +9,14 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Label)
     speakerLabel: cc.Label = null;
 
+    @property(cc.Node)
+    textRegion: cc.Node = null;
+
     @property(cc.Label)
     textLabel: cc.Label = null;
+
+    @property(cc.Label)
+    commentLabel: cc.Label = null;
 
     @property(cc.Label)
     choice1Label: cc.Label = null;
@@ -41,9 +47,10 @@ export default class ChapterUIController extends cc.Component {
         this.chose = false;
         this.chapter = chapter;
         this.speakerLabel.string = chapter.speaker + '奏';
-        this.textLabel.string = chapter.text;
+        this.renderContent(chapter.text);
         this.choice1Label.string = chapter.option1;
         this.choice2Label.string = chapter.option2;
+        this.commentLabel.string = '';
         this.choice1Button.interactable = true;
         this.choice2Button.interactable = true;
         this.feedbackLabel.node.active = false;
@@ -57,7 +64,7 @@ export default class ChapterUIController extends cc.Component {
         let choice = parseInt(customEventData);
         this.feedbackLabel.node.active = true;
         this.feedbackLabel.string = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
-        console.debug(this.feedbackLabel.string);
+        this.commentLabel.string = choice === 0? this.chapter.option1: this.chapter.option2;
         this.choice1Button.interactable = false;
         this.choice2Button.interactable = false;
         this.chose = true;
@@ -74,5 +81,24 @@ export default class ChapterUIController extends cc.Component {
 
     exit() {
         this.node.active = false;
+    }
+
+    renderContent(text: string) {
+        const CHAR_PER_LINE = 15;
+        const DELTA_X = 56;
+        // split text
+        let texts = [];
+        for(let i=0; i<text.length; i+=CHAR_PER_LINE) {
+            texts.push(text.substr(i, CHAR_PER_LINE));
+        }
+        // clear exist labels
+        this.textRegion.removeAllChildren();
+        // instantiate labels
+        texts.forEach((s, i, _) => {
+            let node = cc.instantiate(this.textLabel.node);
+            node.setParent(this.textRegion);
+            node.setPosition(-i * DELTA_X, 0); 
+            node.getComponent(cc.Label).string = s;
+        });
     }
 }
