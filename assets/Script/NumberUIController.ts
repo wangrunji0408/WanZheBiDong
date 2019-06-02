@@ -5,17 +5,17 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class NumberUIController extends cc.Component {
 
-    @property(cc.Label)
-    ssLabel: cc.Label = null;
+    // @property(cc.Label)
+    // ssLabel: cc.Label = null;
 
-    @property(cc.Label)
-    jsLabel: cc.Label = null;
+    // @property(cc.Label)
+    // jsLabel: cc.Label = null;
 
-    @property(cc.Label)
-    ngLabel: cc.Label = null;
+    // @property(cc.Label)
+    // ngLabel: cc.Label = null;
 
-    @property(cc.Label)
-    swLabel: cc.Label = null;
+    // @property(cc.Label)
+    // swLabel: cc.Label = null;
 
     @property(cc.Node)
     ssMask: cc.Node = null;
@@ -30,10 +30,10 @@ export default class NumberUIController extends cc.Component {
     swMask: cc.Node = null;
 
     updateUI(ns: NumberSystem) {
-        this.ssLabel.string = ns.SS.toString();
-        this.jsLabel.string = ns.JS.toString();
-        this.ngLabel.string = ns.NG.toString();
-        this.swLabel.string = ns.SW.toString();
+        // this.ssLabel.string = ns.SS.toString();
+        // this.jsLabel.string = ns.JS.toString();
+        // this.ngLabel.string = ns.NG.toString();
+        // this.swLabel.string = ns.SW.toString();
         this.ssMask.height = this.calcMaskHeight(ns.SS);
         this.jsMask.height = this.calcMaskHeight(ns.JS);
         this.ngMask.height = this.calcMaskHeight(ns.NG);
@@ -41,8 +41,16 @@ export default class NumberUIController extends cc.Component {
     }
 
     calcMaskHeight(percent: number) {
-        const MIN = 6;
-        const MAX = 62;
+        const MIN = 0;
+        const MAX = 100;
         return MIN + (MAX - MIN) * percent / 100;
+    }
+
+    onChaozhengButtonClicked(_event: TouchEvent, _customEventData: string) {
+        this.node.active = true;
+    }
+
+    onGlobalClicked(_event: TouchEvent, _customEventData: string) {
+        this.node.active = false;
     }
 }

@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "d85c83c3-4ae3-4d44-ac75-a1748f992b7a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "朝政数值查看": {
+      "ver": "1.0.3",
+      "uuid": "468302bb-513e-4f7f-9a21-0ff82e5fc880",
+      "rawTextureUuid": "d85c83c3-4ae3-4d44-ac75-a1748f992b7a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 878.5,
+      "offsetY": 397.5,
+      "trimX": 1772,
+      "trimY": 76,
+      "width": 133,
+      "height": 133,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

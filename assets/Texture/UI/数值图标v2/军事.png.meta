@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "67a0a0ca-9495-4f2e-a3c7-69cce2ed9938",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "军事": {
+      "ver": "1.0.3",
+      "uuid": "a9f9e296-5e9d-4526-9e52-db26b0165ee5",
+      "rawTextureUuid": "67a0a0ca-9495-4f2e-a3c7-69cce2ed9938",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 870,
+      "offsetY": 394.5,
+      "trimX": 1776,
+      "trimY": 91,
+      "width": 108,
+      "height": 109,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
