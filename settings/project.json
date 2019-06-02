@@ -1,28 +1,50 @@
 {
+  "cocos-analytics": {
+    "appID": "13798",
+    "appSecret": "959b3ac0037d0f3c2fdce94f8421a9b2",
+    "channel": "",
+    "enable": false,
+    "version": ""
+  },
   "collision-matrix": [
     [
       true
     ]
   ],
-  "excluded-modules": [],
+  "design-resolution-height": 720,
+  "design-resolution-width": 1280,
+  "excluded-modules": [
+    "ParticleSystem",
+    "TiledMap",
+    "Spine Skeleton",
+    "DragonBones",
+    "MotionStreak",
+    "PageView",
+    "PageViewIndicator",
+    "VideoPlayer",
+    "WebView",
+    "Animation",
+    "Collider",
+    "Action",
+    "Physics",
+    "NodePool",
+    "StudioComponent",
+    "Intersection",
+    "Native NetWork",
+    "3D",
+    "Mesh"
+  ],
+  "fit-height": false,
+  "fit-width": true,
   "group-list": [
     "default"
   ],
-  "start-scene": "current",
-  "design-resolution-width": 960,
-  "design-resolution-height": 640,
-  "fit-width": false,
-  "fit-height": true,
-  "use-project-simulator-setting": false,
   "simulator-orientation": false,
-  "use-customize-simulator": false,
   "simulator-resolution": {
-    "width": 960,
-    "height": 640
+    "height": 640,
+    "width": 960
   },
-  "cocos-analytics": {
-    "enable": false,
-    "appID": "13798",
-    "appSecret": "959b3ac0037d0f3c2fdce94f8421a9b2"
-  }
+  "start-scene": "39aa3638-0584-49f9-8513-8e3b53df5e3e",
+  "use-customize-simulator": false,
+  "use-project-simulator-setting": false
 }
