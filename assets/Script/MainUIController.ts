@@ -3,12 +3,11 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class MainUIController extends cc.Component {
 
-    // LIFE-CYCLE CALLBACKS:
+    @property(cc.AudioClip)
+    bgm: cc.AudioClip = null;
 
-    // onLoad () {}
-
-    start () {
-
+    onLoad() {
+        cc.audioEngine.play(this.bgm, true, 0.5);
     }
 
     onButtonClicked(_event: TouchEvent, customEventData: string) {
