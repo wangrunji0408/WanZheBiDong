@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "82dd603d-2b13-4cbf-b8de-f34301c876ab",
+  "uuid": "e94fe4ba-f98e-4678-821c-f08bfdec8372",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,23 +9,23 @@
   "subMetas": {
     "万历": {
       "ver": "1.0.3",
-      "uuid": "520b9e05-75f5-4dfd-8ba3-33781b6f22fe",
-      "rawTextureUuid": "82dd603d-2b13-4cbf-b8de-f34301c876ab",
+      "uuid": "7803c927-f27b-4dac-9262-c8bb69c4c7b3",
+      "rawTextureUuid": "e94fe4ba-f98e-4678-821c-f08bfdec8372",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
-      "offsetX": -730.5,
+      "offsetX": -731,
       "offsetY": -364,
       "trimX": 93,
       "trimY": 728,
-      "width": 273,
+      "width": 272,
       "height": 352,
       "rawWidth": 1920,
       "rawHeight": 1080,
-      "borderTop": 352,
+      "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,
-      "borderRight": 273,
+      "borderRight": 0,
       "subMetas": {}
     }
   }

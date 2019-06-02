@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "04c4addb-b693-4ba9-b638-514bc1087632",
+  "uuid": "df20eeda-bbd1-41dc-920c-128040121d3d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "农民1": {
       "ver": "1.0.3",
-      "uuid": "e700b0b8-b189-42ae-9fac-f30a66f97c13",
-      "rawTextureUuid": "04c4addb-b693-4ba9-b638-514bc1087632",
+      "uuid": "d46b14e4-48c1-4165-b70b-9ba271e22283",
+      "rawTextureUuid": "df20eeda-bbd1-41dc-920c-128040121d3d",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

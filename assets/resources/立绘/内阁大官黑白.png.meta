@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "c96d1437-1a6b-4c20-8b9b-66e318671e70",
+  "uuid": "88e0f29c-9742-40cd-a349-8762a6d1051b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "内阁大官黑白": {
       "ver": "1.0.3",
-      "uuid": "47b6ee95-8006-4dbf-a7c1-52cd36cc7e09",
-      "rawTextureUuid": "c96d1437-1a6b-4c20-8b9b-66e318671e70",
+      "uuid": "c9997841-5e8c-47e1-9472-e00992d1d6de",
+      "rawTextureUuid": "88e0f29c-9742-40cd-a349-8762a6d1051b",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "1d8121e0-8dee-4702-aa7d-63bed3b0bf14",
+  "uuid": "55eec3bf-8882-4931-b02b-49d280b281af",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "产婆": {
       "ver": "1.0.3",
-      "uuid": "432ad4f5-2ed8-4528-a5ed-140326d2ff40",
-      "rawTextureUuid": "1d8121e0-8dee-4702-aa7d-63bed3b0bf14",
+      "uuid": "caecfeb4-6bd6-4d86-be00-bc62a0b96fed",
+      "rawTextureUuid": "55eec3bf-8882-4931-b02b-49d280b281af",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

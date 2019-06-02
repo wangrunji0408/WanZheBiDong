@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "d9706206-136c-4b3c-9fec-52531ccfb841",
+  "uuid": "a2922201-f358-460f-beb0-f82df72c552c",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,16 +9,16 @@
   "subMetas": {
     "大臣3": {
       "ver": "1.0.3",
-      "uuid": "fc22363c-acaa-4327-97bb-a0c5097888ab",
-      "rawTextureUuid": "d9706206-136c-4b3c-9fec-52531ccfb841",
+      "uuid": "ec9bb9da-a236-444f-aeec-816fb9777f8b",
+      "rawTextureUuid": "a2922201-f358-460f-beb0-f82df72c552c",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
-      "offsetX": -13.5,
+      "offsetX": -14,
       "offsetY": -360,
       "trimX": 815,
       "trimY": 720,
-      "width": 263,
+      "width": 262,
       "height": 359,
       "rawWidth": 1920,
       "rawHeight": 1079,

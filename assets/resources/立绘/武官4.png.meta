@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "23aacf7b-0bea-4b7f-8d92-a4a3889f81ab",
+  "uuid": "5d260fb5-6d5d-494e-9bcc-bead02c67874",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "武官4": {
       "ver": "1.0.3",
-      "uuid": "3146691c-6740-45ca-81f6-b25481fd0a6d",
-      "rawTextureUuid": "23aacf7b-0bea-4b7f-8d92-a4a3889f81ab",
+      "uuid": "7801fa9c-23ca-4c62-b25f-8931eac3939d",
+      "rawTextureUuid": "5d260fb5-6d5d-494e-9bcc-bead02c67874",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

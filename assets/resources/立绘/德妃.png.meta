@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "740174e6-9a49-4fc7-9b72-04a896aebc7f",
+  "uuid": "dd5bde76-e893-422e-9c39-91003c1ca94d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "德妃": {
       "ver": "1.0.3",
-      "uuid": "b912b1d6-d3bc-4b63-8f38-93d3edc1a5c3",
-      "rawTextureUuid": "740174e6-9a49-4fc7-9b72-04a896aebc7f",
+      "uuid": "a0c5f096-dedd-4763-a074-a440c1c35fec",
+      "rawTextureUuid": "dd5bde76-e893-422e-9c39-91003c1ca94d",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

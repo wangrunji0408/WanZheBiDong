@@ -9,8 +9,8 @@
     "default": {
       "formats": [
         {
-          "name": "png",
-          "quality": 80
+          "name": "jpg",
+          "quality": 50
         }
       ]
     }

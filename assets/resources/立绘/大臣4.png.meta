@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "c0e734fb-d73a-43e5-8dd6-844f700f99b0",
+  "uuid": "f24861f8-1161-4b6c-ae2f-5f8a9253889d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "大臣4": {
       "ver": "1.0.3",
-      "uuid": "b2f8dc16-9dc3-446a-8a1c-7890af35eca4",
-      "rawTextureUuid": "c0e734fb-d73a-43e5-8dd6-844f700f99b0",
+      "uuid": "4151617e-eb62-49fc-a62d-682cc6918bd6",
+      "rawTextureUuid": "f24861f8-1161-4b6c-ae2f-5f8a9253889d",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

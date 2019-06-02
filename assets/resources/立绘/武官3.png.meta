@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "3346ed23-d15a-4949-8d5c-ab871d519274",
+  "uuid": "1d78effb-0029-4dfc-80f9-6cc552544c23",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,16 +9,16 @@
   "subMetas": {
     "武官3": {
       "ver": "1.0.3",
-      "uuid": "06b7d74d-db06-483d-9c47-83db4a5e68c9",
-      "rawTextureUuid": "3346ed23-d15a-4949-8d5c-ab871d519274",
+      "uuid": "e61ae7c4-f01e-47ec-aded-45c13a3707e1",
+      "rawTextureUuid": "1d78effb-0029-4dfc-80f9-6cc552544c23",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
-      "offsetX": 389,
+      "offsetX": 388.5,
       "offsetY": -353.5,
       "trimX": 1201,
       "trimY": 707,
-      "width": 296,
+      "width": 295,
       "height": 372,
       "rawWidth": 1920,
       "rawHeight": 1079,

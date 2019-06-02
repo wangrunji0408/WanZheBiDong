@@ -1,6 +1,6 @@
 {
   "ver": "2.3.0",
-  "uuid": "0bf4cbdf-f6a3-43bf-b155-1231052b0fea",
+  "uuid": "7d751737-a817-461d-88ec-8145865b3b38",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,8 +9,8 @@
   "subMetas": {
     "富商": {
       "ver": "1.0.3",
-      "uuid": "9660e4b2-1443-452a-bb86-1149923d7116",
-      "rawTextureUuid": "0bf4cbdf-f6a3-43bf-b155-1231052b0fea",
+      "uuid": "8c9771ab-f939-4996-b345-53c03ce733e4",
+      "rawTextureUuid": "7d751737-a817-461d-88ec-8145865b3b38",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
