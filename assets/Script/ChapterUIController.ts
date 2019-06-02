@@ -3,6 +3,8 @@ import UIController from "./UIController";
 
 const {ccclass, property} = cc._decorator;
 
+const LINE_PER_PAGE = 12;
+
 @ccclass
 export default class ChapterUIController extends cc.Component {
 
@@ -19,13 +21,13 @@ export default class ChapterUIController extends cc.Component {
     commentLabel: cc.Label = null;
 
     @property(cc.Label)
+    commentLabel2: cc.Label = null;
+
+    @property(cc.Label)
     choice1Label: cc.Label = null;
 
     @property(cc.Label)
     choice2Label: cc.Label = null;
-
-    @property(cc.Label)
-    feedbackLabel: cc.Label = null;
 
     @property(cc.Button)
     choice1Button: cc.Button = null;
@@ -33,8 +35,20 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Button)
     choice2Button: cc.Button = null;
 
+    @property(cc.Button)
+    nextButton: cc.Button = null;
+
+    @property(cc.Button)
+    prevButton: cc.Button = null;
+
     @property(cc.Node)
     dialogNode: cc.Node = null;
+
+    @property(cc.Node)
+    dialogLihui: cc.Node = null;
+
+    @property(cc.Node)
+    dialogSpeaker: cc.Node = null;
 
     @property(cc.Label)
     dialogLabel: cc.Label = null;
@@ -43,6 +57,13 @@ export default class ChapterUIController extends cc.Component {
     uiController: UIController = null;
 
     chapter: ChapterInfo;
+
+    lines: string[];
+
+    pageID: number;
+    get totalPages(): number {
+        return Math.ceil(this.lines.length / LINE_PER_PAGE);
+    }
 
     chose: boolean;
 
@@ -53,13 +74,15 @@ export default class ChapterUIController extends cc.Component {
         this.chose = false;
         this.chapter = chapter;
         this.speakerLabel.string = chapter.speaker + '奏';
-        this.renderContent(chapter.text);
+        this.lines = this.splitContent(chapter.text);
+        this.pageID = 0;
         this.choice1Label.string = chapter.option1;
         this.choice2Label.string = chapter.option2;
         this.commentLabel.string = '';
+        this.commentLabel2.string = '';
         this.choice1Button.interactable = true;
         this.choice2Button.interactable = true;
-        this.feedbackLabel.node.active = false;
+        this.updateUI();
     }
 
     // stage 2: choose
@@ -71,12 +94,16 @@ export default class ChapterUIController extends cc.Component {
         // force choose
         if(this.chapter.option !== null && choice !== this.chapter.option) {
             let reply = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
-            this.showDialog(reply);
+            this.showDialog(reply, true);
             return;
         }
-        this.feedbackLabel.node.active = true;
-        this.feedbackLabel.string = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
-        this.commentLabel.string = choice === 0? this.chapter.option1: this.chapter.option2;
+        let feedback = choice === 0? this.chapter.feedback1: this.chapter.feedback2;
+        if(feedback) {
+            this.showDialog(feedback, false);
+        }
+        let comment = choice === 0? this.chapter.option1: this.chapter.option2
+        this.commentLabel.string = comment.substr(0, 12);
+        this.commentLabel2.string = comment.substr(12, 12);
         this.choice1Button.interactable = false;
         this.choice2Button.interactable = false;
         this.chose = true;
@@ -95,31 +122,60 @@ export default class ChapterUIController extends cc.Component {
         this.node.active = false;
     }
 
-    renderContent(text: string) {
+    splitContent(text: string): string[] {
         const CHAR_PER_LINE = 15;
-        const DELTA_X = 56;
-        // split text
-        let texts = [];
-        for(let i=0; i<text.length; i+=CHAR_PER_LINE) {
-            texts.push(text.substr(i, CHAR_PER_LINE));
+        let lines = [];
+        for(let line of text.split('\\n')) {
+            lines.push(line.substr(0, CHAR_PER_LINE + 1));
+            for(let i=CHAR_PER_LINE + 1; i<line.length; i+=CHAR_PER_LINE) {
+                lines.push('　' + line.substr(i, CHAR_PER_LINE));
+            }
         }
+        return lines;
+    }
+
+    updateUI() {
+        const DELTA_X = 56;
         // clear exist labels
         this.textRegion.removeAllChildren();
         // instantiate labels
-        texts.forEach((s, i, _) => {
+        for(let i = 0; i < LINE_PER_PAGE; i += 1) {
+            let idx = LINE_PER_PAGE * this.pageID + i;
+            if(idx >= this.lines.length) {
+                break;
+            }
             let node = cc.instantiate(this.textLabel.node);
             node.setParent(this.textRegion);
             node.setPosition(-i * DELTA_X, 0); 
-            node.getComponent(cc.Label).string = s;
-        });
+            node.getComponent(cc.Label).string = this.lines[idx];
+        };
+        // show buttons
+        let isFirstPage = this.pageID === 0;
+        let isLastPage = this.pageID + 1 === this.totalPages;
+        this.choice1Button.node.active = isLastPage;
+        this.choice2Button.node.active = isLastPage;
+        this.nextButton.node.active = !isLastPage;
+        this.prevButton.node.active = !isFirstPage;
     }
 
-    showDialog(reply: string) {
+    showDialog(reply: string, fengbao: boolean) {
         this.dialogNode.active = true;
         this.dialogLabel.string = reply;
+        this.dialogLihui.active = fengbao;
+        this.dialogSpeaker.active = fengbao;
     }
 
     onDialogClicked(_event: TouchEvent, _: string) {
         this.dialogNode.active = false;
+    }
+
+    onNextPageClicked(_event: TouchEvent, _: string) {
+        this.pageID = Math.min(this.totalPages - 1, this.pageID + 1);
+        this.updateUI();
+    }
+
+    onPrevPageClicked(_event: TouchEvent, _: string) {
+        this.pageID = Math.max(0, this.pageID - 1);
+        this.updateUI();
     }
 }

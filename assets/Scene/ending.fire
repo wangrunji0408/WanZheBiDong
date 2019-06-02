@@ -806,7 +806,7 @@
     "_zIndex": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "05JCzBYqpFZY1wOhO20T6s"
+    "_id": "41jhXmtltD6b7DSl6Wl2pG"
   },
   {
     "__type__": "cc.Label",
@@ -831,7 +831,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "e2gnkpNWtJEo1hXkn8AJOn"
+    "_id": "32Ypz5XZ1NMbQ+nDPr+P1S"
   },
   {
     "__type__": "cc.RichText",
@@ -1060,7 +1060,7 @@
     "_zIndex": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "b9RnVYihdI7p9W7HNs12pO"
+    "_id": "14MwXvVWpKQ6dWMoAztosc"
   },
   {
     "__type__": "cc.Label",
@@ -1085,7 +1085,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "06C0oKhs9B4KDbwvtLzfeN"
+    "_id": "6duW6E3zBCAbFZnK/2H5SQ"
   },
   {
     "__type__": "cc.RichText",
@@ -1185,7 +1185,7 @@
     "component": "",
     "_componentId": "dadd9IvJyNPPbtgYLcm1ojH",
     "handler": "onButtonClicked",
-    "customEventData": "dialog"
+    "customEventData": "main"
   },
   {
     "__type__": "cc.Canvas",
