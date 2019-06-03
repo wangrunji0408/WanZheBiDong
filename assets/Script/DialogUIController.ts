@@ -29,6 +29,16 @@ export default class DialogUIController extends cc.Component {
 
     dialog: DialogInfo = null;
 
+    // for typewriter effect
+    time: number = 0;
+    get showLength(): number {
+        const CHARS_PER_SEC = 20;
+        return Math.floor(this.time * CHARS_PER_SEC);
+    }
+    get isTyping(): boolean {
+        return this.showLength < this.dialog.text.length;
+    }
+
     onGlobalClicked(event: TouchEvent, customEventData: string) {
         console.debug('global clicked');
         if(this.dialog.nextSceneID != null) {
@@ -42,16 +52,21 @@ export default class DialogUIController extends cc.Component {
         this.uiController.goNext(choice);
     }
 
+    update(dt: number) {
+        this.time += dt;
+        this.textLabel.string = this.dialog.text.substr(0, this.showLength);
+        this.buttonGroup.active = this.dialog.buttons.length >= 2 && !this.isTyping;
+    }
+
     updateUI(dialog: DialogInfo) {
         this.dialog = dialog;
+        this.buttonGroup.active = false;    // activated by update()
         if(dialog.buttons.length >= 2) {
-            this.buttonGroup.active = true;
             this.buttonLabel1.string = dialog.buttons[0].text;
             this.buttonLabel2.string = dialog.buttons[1].text;
-        } else {
-            this.buttonGroup.active = false;
         }
-        this.textLabel.string = dialog.text;
+        this.time = 0;  // reset time
+        this.textLabel.string = '';
         this.speakerLabel.string = dialog.speaker;
         this.updateLihui(dialog.avatar);
     }
