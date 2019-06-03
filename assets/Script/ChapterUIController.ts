@@ -53,6 +53,9 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Label)
     dialogLabel: cc.Label = null;
 
+    @property(cc.Node)
+    sealNode: cc.Node = null;
+
     // assigned by UIController
     uiController: UIController = null;
 
@@ -82,6 +85,7 @@ export default class ChapterUIController extends cc.Component {
         this.commentLabel2.string = '';
         this.choice1Button.interactable = true;
         this.choice2Button.interactable = true;
+        this.sealNode.active = false;
         this.updateUI();
     }
 
@@ -108,6 +112,7 @@ export default class ChapterUIController extends cc.Component {
         this.choice2Button.interactable = false;
         this.chose = true;
         this.uiController.choose(choice);
+        this.updateUI();
     }
 
     // stage 3: exit
@@ -156,6 +161,11 @@ export default class ChapterUIController extends cc.Component {
         this.choice2Button.node.active = isLastPage;
         this.nextButton.node.active = !isLastPage;
         this.prevButton.node.active = !isFirstPage;
+        // show comment
+        let showComment = isLastPage && this.chose;
+        this.commentLabel.node.active = showComment;
+        this.commentLabel2.node.active = showComment;
+        this.sealNode.active = showComment;
     }
 
     showDialog(reply: string, fengbao: boolean) {

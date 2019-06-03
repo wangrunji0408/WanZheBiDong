@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "f7b1f36f-3a77-489b-919e-cdc91c581b1c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "玉玺": {
+      "ver": "1.0.3",
+      "uuid": "6b24bf50-b856-49fc-af19-a1ab1fb94c78",
+      "rawTextureUuid": "f7b1f36f-3a77-489b-919e-cdc91c581b1c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 859.5,
+      "offsetY": -10.5,
+      "trimX": 1747,
+      "trimY": 490,
+      "width": 145,
+      "height": 121,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
