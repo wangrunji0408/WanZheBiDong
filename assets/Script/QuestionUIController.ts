@@ -9,29 +9,11 @@ export default class QuestionUIController extends cc.Component {
     @property(cc.Label)
     textLabel: cc.Label = null;
 
-    @property(cc.Label)
-    choice1Label: cc.Label = null;
+    @property([cc.Label])
+    choiceLabels: cc.Label[] = [];
 
-    @property(cc.Label)
-    choice2Label: cc.Label = null;
-
-    @property(cc.Label)
-    choice3Label: cc.Label = null;
-
-    @property(cc.Label)
-    choice4Label: cc.Label = null;
-
-    @property(cc.Button)
-    choice1Button: cc.Button = null;
-
-    @property(cc.Button)
-    choice2Button: cc.Button = null;
-
-    @property(cc.Button)
-    choice3Button: cc.Button = null;
-
-    @property(cc.Button)
-    choice4Button: cc.Button = null;
+    @property([cc.Button])
+    choiceButtons: cc.Button[] = [];
 
     // assigned by UIController
     uiController: UIController = null;
@@ -50,14 +32,10 @@ export default class QuestionUIController extends cc.Component {
         this.reorder = [0, 1, 2, 3];
         shuffle(this.reorder);
         this.textLabel.string = question.question;
-        this.choice1Label.string = options[this.reorder[0]];
-        this.choice2Label.string = options[this.reorder[1]];
-        this.choice3Label.string = options[this.reorder[2]];
-        this.choice4Label.string = options[this.reorder[3]];
-        this.choice1Button.interactable = true;
-        this.choice2Button.interactable = true;
-        this.choice3Button.interactable = true;
-        this.choice4Button.interactable = true;
+        for(let i=0; i<4; ++i) {
+            this.choiceLabels[i].string = options[this.reorder[i]];
+            this.choiceButtons[i].interactable = true;
+        }
         this.chose = false;
     }
 
@@ -68,10 +46,9 @@ export default class QuestionUIController extends cc.Component {
         }
         let choice = parseInt(customEventData);
         choice = this.reorder[choice];
-        this.choice1Button.interactable = false;
-        this.choice2Button.interactable = false;
-        this.choice3Button.interactable = false;
-        this.choice4Button.interactable = false;
+        for(let i=0; i<4; ++i) {
+            this.choiceButtons[i].interactable = false;
+        }
         this.chose = true;
         this.uiController.choose(choice);
     }

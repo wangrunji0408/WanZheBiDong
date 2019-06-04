@@ -56,8 +56,10 @@ export class NumberSystem {
 
 /// 游戏存档
 export class UserData {
-	/// 第i章结束时的数值 i=0-5
-	numbers: NumberSystem[] = [];
+	/// 第i章开始时的数值 i=1-6
+	numbers: NumberSystem[] = [null, new NumberSystem(), null, null, null, null, null];
+
+	static value: UserData = new UserData();
 
 	save() {
 		let json = JSON.stringify(this);

@@ -7,7 +7,7 @@ import EndingUIController from "./EndingUIController";
 import TitleUIController from "./TitleUIController";
 import { CSVToDicts } from "./Utils";
 import { RawDialogInfo, RawChapterInfo, RawQuestionInfo, RawEndingInfo, RawNumberInfo } from "./TableData";
-import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo } from "./Data";
+import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo, UserData } from "./Data";
 
 const {ccclass, property} = cc._decorator;
 
@@ -142,6 +142,9 @@ export default class UIController extends cc.Component {
         if(scene instanceof DialogInfo) {
             if(this.gameManager.currentID % 1000 === 0) {
                 this.titleUIController.activate(scene);
+                // auto save on chapter beginning
+                let chapterID = this.gameManager.currentID / 1000;
+                UserData.value.numbers[chapterID] = this.gameManager.numbers;
             }
             this.dialogUIController.updateUI(scene);
             this.chapterUIController.exit();

@@ -11618,30 +11618,34 @@
     "textLabel": {
       "__id__": 238
     },
-    "choice1Label": {
-      "__id__": 241
-    },
-    "choice2Label": {
-      "__id__": 247
-    },
-    "choice3Label": {
-      "__id__": 253
-    },
-    "choice4Label": {
-      "__id__": 259
-    },
-    "choice1Button": {
-      "__id__": 243
-    },
-    "choice2Button": {
-      "__id__": 249
-    },
-    "choice3Button": {
-      "__id__": 255
-    },
-    "choice4Button": {
-      "__id__": 261
-    },
+    "choiceLabels": [
+      {
+        "__id__": 241
+      },
+      {
+        "__id__": 247
+      },
+      {
+        "__id__": 253
+      },
+      {
+        "__id__": 259
+      }
+    ],
+    "choiceButtons": [
+      {
+        "__id__": 243
+      },
+      {
+        "__id__": 249
+      },
+      {
+        "__id__": 255
+      },
+      {
+        "__id__": 261
+      }
+    ],
     "_id": "56Ru4HCUtDT5rVADDXN/j1"
   },
   {
