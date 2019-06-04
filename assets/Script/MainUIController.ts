@@ -1,3 +1,5 @@
+import { UserData } from "./Data";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -7,6 +9,7 @@ export default class MainUIController extends cc.Component {
     bgm: cc.AudioClip = null;
 
     onLoad() {
+        UserData.load();
         cc.audioEngine.play(this.bgm, true, 0.5);
     }
 

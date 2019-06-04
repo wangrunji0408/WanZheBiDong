@@ -22,7 +22,9 @@ export default class ChooseUIController extends cc.Component {
 
     onButtonClicked(_event: TouchEvent, customEventData: string) {
         let sceneID = parseInt(customEventData);
+        let chapterID = sceneID / 1000;
         UIController.initSceneID = sceneID;
+        UIController.initNumber = UserData.value.numbers[chapterID];
         cc.director.loadScene("dialog");
     }
 

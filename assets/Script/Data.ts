@@ -61,14 +61,18 @@ export class UserData {
 
 	static value: UserData = new UserData();
 
-	save() {
-		let json = JSON.stringify(this);
+	static save() {
+		let json = JSON.stringify(UserData.value);
 		cc.sys.localStorage.setItem('data', json);
 	}
 
 	static load() {
+		this.value = new UserData();
 		let json = cc.sys.localStorage.getItem('data');
-		return json? JSON.parse(json): new UserData();
+		if(json) {
+			let o = JSON.parse(json);
+			this.value.numbers = o.numbers;
+		}
 	}
 }
 

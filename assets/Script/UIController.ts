@@ -7,7 +7,7 @@ import EndingUIController from "./EndingUIController";
 import TitleUIController from "./TitleUIController";
 import { CSVToDicts } from "./Utils";
 import { RawDialogInfo, RawChapterInfo, RawQuestionInfo, RawEndingInfo, RawNumberInfo } from "./TableData";
-import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo, UserData } from "./Data";
+import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo, UserData, NumberSystem } from "./Data";
 
 const {ccclass, property} = cc._decorator;
 
@@ -63,6 +63,7 @@ export default class UIController extends cc.Component {
 
     // set by choose scene
     static initSceneID: number = GameManager.INIT_SCENE_ID;
+    static initNumber: NumberSystem = new NumberSystem();
 
     start () {
         this.dialogUIController.uiController = this;
@@ -77,7 +78,10 @@ export default class UIController extends cc.Component {
         
         this.gameManager = new GameManager(scenes, chapters, questions, numbers, endings);
         this.gameManager.goTo(UIController.initSceneID);
-        UIController.initSceneID = GameManager.INIT_SCENE_ID;   // reset init ID
+        this.gameManager.numbers = UIController.initNumber;
+        // reset init settings
+        UIController.initSceneID = GameManager.INIT_SCENE_ID;
+        UIController.initNumber = new NumberSystem();
         this.updateUI();
     }
 
@@ -145,6 +149,7 @@ export default class UIController extends cc.Component {
                 // auto save on chapter beginning
                 let chapterID = this.gameManager.currentID / 1000;
                 UserData.value.numbers[chapterID] = this.gameManager.numbers;
+                UserData.save();
             }
             this.dialogUIController.updateUI(scene);
             this.chapterUIController.exit();
