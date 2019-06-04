@@ -17,6 +17,9 @@ export default class UIController extends cc.Component {
     @property(cc.Sprite)
     cgSprite: cc.Sprite = null;
 
+    @property(cc.Sprite)
+    lastCGSprite: cc.Sprite = null;
+
     @property(cc.SpriteFrame)
     defaultCG: cc.SpriteFrame = null;
 
@@ -53,6 +56,9 @@ export default class UIController extends cc.Component {
     @property(cc.EditBox)
     debugSceneID: cc.EditBox = null;
 
+    @property(cc.Node)
+    transitionNode: cc.Node = null;
+
     gameManager: GameManager = null;
 
     // set by choose scene
@@ -84,8 +90,39 @@ export default class UIController extends cc.Component {
     }
 
     goNext(choice: number) {
+        let oldScene = this.gameManager.get();
         this.gameManager.goNext(choice);
+        let newScene = this.gameManager.get();
+        let transition = oldScene.imageName !== newScene.imageName
+            && oldScene instanceof DialogInfo
+            && newScene instanceof DialogInfo;
         this.updateUI();
+        if(transition) {
+            // freeze CG
+            this.lastCGSprite.spriteFrame = this.cgSprite.spriteFrame;
+            // temp disable dialog UI
+            let dialogActivation = this.dialogUIController.node.active;
+            this.dialogUIController.node.active = false;
+            // delay show title UI
+            let titleActivation = this.titleUIController.node.active;
+            this.titleUIController.node.active = false;
+            // enable transition animation
+            this.transitionNode.active = true;
+            this.transitionNode.runAction(
+                cc.sequence(
+                    cc.fadeIn(1),
+                    cc.callFunc(() => {
+                        this.lastCGSprite.spriteFrame = null;
+                        this.titleUIController.node.active = titleActivation;
+                    }),
+                    cc.fadeOut(1),
+                    cc.callFunc(() => {
+                        this.transitionNode.active = false;
+                        this.dialogUIController.node.active = dialogActivation;
+                    }),
+                )
+            );
+        }
     }
 
     goTo(sceneID: number) {

@@ -54,6 +54,9 @@ export default class DialogUIController extends cc.Component {
 
     update(dt: number) {
         this.time += dt;
+        if(this.dialog === null) {
+            return;
+        }
         this.textLabel.string = this.dialog.text.substr(0, this.showLength);
         this.buttonGroup.active = this.dialog.buttons.length >= 2 && !this.isTyping;
     }
