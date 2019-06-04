@@ -6,8 +6,10 @@ type State = DialogInfo | ChapterInfo | QuestionInfo | EndingInfo;
 /// Game logic state machine
 export default class GameManager {
 	scenes: { [id: number]: State } = {};
-	currentID: number = 1;
+	currentID: number = GameManager.INIT_SCENE_ID;
 	numbers: NumberSystem = new NumberSystem();
+
+	static INIT_SCENE_ID = 1000;
 
 	constructor(
 		scenes: RawDialogInfo[], 
@@ -53,6 +55,7 @@ export default class GameManager {
 				this.goTo(button.nextSceneID);
 			} else {
 				// no choice
+				this.numbers.apply(scene.effect);
 				this.goTo(scene.nextSceneID);
 			}
 		} else if(scene instanceof ChapterInfo) {

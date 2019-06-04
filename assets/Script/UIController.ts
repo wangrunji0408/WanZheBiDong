@@ -4,6 +4,7 @@ import ChapterUIController from "./ChapterUIController";
 import DialogUIController from "./DialogUIController";
 import QuestionUIController from "./QuestionUIController";
 import EndingUIController from "./EndingUIController";
+import TitleUIController from "./TitleUIController";
 import { CSVToDicts } from "./Utils";
 import { RawDialogInfo, RawChapterInfo, RawQuestionInfo, RawEndingInfo, RawNumberInfo } from "./TableData";
 import { DialogInfo, ChapterInfo, QuestionInfo, EndingInfo } from "./Data";
@@ -31,6 +32,9 @@ export default class UIController extends cc.Component {
     @property(QuestionUIController)
     questionUIController: QuestionUIController = null;
 
+    @property(TitleUIController)
+    titleUIController: TitleUIController = null;
+
     @property(cc.TextAsset)
     dialogData: cc.TextAsset = null;
 
@@ -52,7 +56,7 @@ export default class UIController extends cc.Component {
     gameManager: GameManager = null;
 
     // set by choose scene
-    static initSceneID: number = 1;
+    static initSceneID: number = GameManager.INIT_SCENE_ID;
 
     start () {
         this.dialogUIController.uiController = this;
@@ -67,7 +71,7 @@ export default class UIController extends cc.Component {
         
         this.gameManager = new GameManager(scenes, chapters, questions, numbers, endings);
         this.gameManager.goTo(UIController.initSceneID);
-        UIController.initSceneID = 1;   // reset init ID
+        UIController.initSceneID = GameManager.INIT_SCENE_ID;   // reset init ID
         this.updateUI();
     }
 
@@ -99,6 +103,9 @@ export default class UIController extends cc.Component {
         let scene = this.gameManager.get();
         this.debugSceneID.string = this.gameManager.currentID.toString();
         if(scene instanceof DialogInfo) {
+            if(this.gameManager.currentID % 1000 === 0) {
+                this.titleUIController.activate(scene);
+            }
             this.dialogUIController.updateUI(scene);
             this.chapterUIController.exit();
             this.questionUIController.exit();

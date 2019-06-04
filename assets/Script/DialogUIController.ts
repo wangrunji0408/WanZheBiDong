@@ -60,6 +60,8 @@ export default class DialogUIController extends cc.Component {
 
     updateUI(dialog: DialogInfo) {
         this.dialog = dialog;
+        let isTitle = dialog.sceneID % 1000 === 0;
+        this.node.active = !isTitle;
         this.buttonGroup.active = false;    // activated by update()
         if(dialog.buttons.length >= 2) {
             this.buttonLabel1.string = dialog.buttons[0].text;

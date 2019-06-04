@@ -54,6 +54,22 @@ export class NumberSystem {
 	}
 }
 
+/// 游戏存档
+export class UserData {
+	/// 第i章结束时的数值 i=0-5
+	numbers: NumberSystem[] = [];
+
+	save() {
+		let json = JSON.stringify(this);
+		cc.sys.localStorage.setItem('data', json);
+	}
+
+	static load() {
+		let json = cc.sys.localStorage.getItem('data');
+		return json? JSON.parse(json): new UserData();
+	}
+}
+
 export class ButtonInfo {
 	text: string;
 	nextSceneID: number;
@@ -67,6 +83,7 @@ export class DialogInfo {
 	avatar: string;
 	text: string;
 	nextSceneID?: number;
+	effect?: Effect;
 	buttons: ButtonInfo[];
 	isSceneOver: boolean;
 
@@ -92,6 +109,7 @@ export class DialogInfo {
 			this.buttons = [button1, button2];
 		} else {
 			this.nextSceneID = parseInt(info.nextID1);
+			this.effect = Effect.parse(info.result1);
 			this.buttons = [];
 		}
 	}
