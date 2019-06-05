@@ -41,6 +41,10 @@ export default class DialogUIController extends cc.Component {
 
     onGlobalClicked(event: TouchEvent, customEventData: string) {
         console.debug('global clicked');
+        if(this.isTyping) {
+            this.time = 100000;
+            return;
+        }
         if(this.dialog.nextSceneID != null) {
             this.uiController.goNext(0);
         }
