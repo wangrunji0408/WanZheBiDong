@@ -9,6 +9,7 @@ export default class MainUIController extends cc.Component {
     bgm: cc.AudioClip = null;
 
     onLoad() {
+        cc.game.setFrameRate(30);
         UserData.load();
         cc.audioEngine.play(this.bgm, true, 0.5);
     }
@@ -17,6 +18,4 @@ export default class MainUIController extends cc.Component {
         let sceneName = customEventData;
         cc.director.loadScene(sceneName);
     }
-
-    // update (dt) {}
 }
