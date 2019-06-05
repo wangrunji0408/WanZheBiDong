@@ -15,6 +15,15 @@ export default class QuestionUIController extends cc.Component {
     @property([cc.Button])
     choiceButtons: cc.Button[] = [];
 
+    @property([cc.Sprite])
+    resultSprites: cc.Sprite[] = [];
+
+    @property(cc.SpriteFrame)
+    rightSprite: cc.SpriteFrame = null;
+
+    @property(cc.SpriteFrame)
+    wrongSprite: cc.SpriteFrame = null;
+
     // assigned by UIController
     uiController: UIController = null;
 
@@ -35,6 +44,7 @@ export default class QuestionUIController extends cc.Component {
         for(let i=0; i<4; ++i) {
             this.choiceLabels[i].string = options[this.reorder[i]];
             this.choiceButtons[i].interactable = true;
+            this.resultSprites[i].spriteFrame = null;
         }
         this.chose = false;
     }
@@ -44,11 +54,13 @@ export default class QuestionUIController extends cc.Component {
         if(this.chose) {
             return;
         }
-        let choice = parseInt(customEventData);
-        choice = this.reorder[choice];
+        let rawChoice = parseInt(customEventData);
+        let choice = this.reorder[rawChoice];
         for(let i=0; i<4; ++i) {
             this.choiceButtons[i].interactable = false;
         }
+        this.resultSprites[rawChoice].spriteFrame = this.wrongSprite;
+        this.resultSprites[this.reorder.indexOf(0)].spriteFrame = this.rightSprite;
         this.chose = true;
         this.uiController.choose(choice);
     }
