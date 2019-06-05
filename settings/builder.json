@@ -36,7 +36,7 @@
   },
   "startScene": "39aa3638-0584-49f9-8513-8e3b53df5e3e",
   "title": "ImWanli",
-  "webOrientation": "auto",
+  "webOrientation": "landscape",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "https://wanzhebidong.oss-cn-beijing.aliyuncs.com/build/wechatgame",
     "appid": "wxe1fd8abfcfd0cfec",

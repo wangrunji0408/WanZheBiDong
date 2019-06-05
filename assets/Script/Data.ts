@@ -71,7 +71,13 @@ export class UserData {
 		let json = cc.sys.localStorage.getItem('data');
 		if(json) {
 			let o = JSON.parse(json);
-			this.value.numbers = o.numbers;
+			for(let i=0; i<=6; ++i) {
+				if(o.numbers[i] !== null) {
+					// add prototype to parsed object
+					this.value.numbers[i] = Object.create(NumberSystem.prototype);
+					Object.assign(this.value.numbers[i], o.numbers[i]);
+				}
+			}
 		}
 	}
 }
