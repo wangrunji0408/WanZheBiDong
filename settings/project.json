@@ -25,7 +25,6 @@
     "WebView",
     "Animation",
     "Collider",
-    "Action",
     "Physics",
     "NodePool",
     "StudioComponent",

@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.61328125,
-      "y": 0.61328125,
-      "z": 0.61328125
+      "x": 0.61015625,
+      "y": 0.61015625,
+      "z": 0.61015625
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -407,8 +407,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "章 节 选 择",
-    "_N$string": "章 节 选 择",
+    "_string": "选 择 章 节",
+    "_N$string": "选 择 章 节",
     "_fontSize": 64,
     "_lineHeight": 64,
     "_enableWrapText": true,
@@ -529,8 +529,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 0,
-    "transition": 0,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,

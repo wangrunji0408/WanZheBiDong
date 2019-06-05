@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "a6ec36d1-3200-4879-9fdd-f44b5083c84f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "关琰": {
+      "ver": "1.0.3",
+      "uuid": "0b3b206b-aa2a-47e1-b9ca-853e160ee6e8",
+      "rawTextureUuid": "a6ec36d1-3200-4879-9fdd-f44b5083c84f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 540,
+      "height": 540,
+      "rawWidth": 540,
+      "rawHeight": 540,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

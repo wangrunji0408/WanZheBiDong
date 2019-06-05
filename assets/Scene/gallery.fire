@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.46963975694444443,
-      "y": 0.46963975694444443,
-      "z": 0.46963975694444443
+      "x": 0.61015625,
+      "y": 0.61015625,
+      "z": 0.61015625
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -637,12 +637,12 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": 1,
       "y": 0.5
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 372,
+      "x": 598,
       "y": -297,
       "z": 0
     },
@@ -687,7 +687,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$horizontalAlign": 1,
+    "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,

@@ -16,19 +16,19 @@ export default class GalleryUIController extends cc.Component {
 
     currentIdx: number = 0;
 
+    start() {
+        this.updateUI();
+    }
+
     onLeftButtonClicked(_event: TouchEvent, _customEventData: string) {
-        if(this.currentIdx === 0) {
-            return;
-        }
-        this.currentIdx -= 1;
+        let n = this.names.length;
+        this.currentIdx = (this.currentIdx + n - 1) % n;
         this.updateUI();
     }
 
     onRightButtonClicked(_event: TouchEvent, _customEventData: string) {
-        if(this.currentIdx === this.names.length - 1) {
-            return;
-        }
-        this.currentIdx += 1;
+        let n = this.names.length;
+        this.currentIdx = (this.currentIdx + n + 1) % n;
         this.updateUI();
     }
 

@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "c0df9b44-f3e0-40c6-81ef-690961a7c866",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "李丹郁": {
+      "ver": "1.0.3",
+      "uuid": "2e8214fc-b02d-427f-aa3f-051ba0d19195",
+      "rawTextureUuid": "c0df9b44-f3e0-40c6-81ef-690961a7c866",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 641,
+      "height": 643,
+      "rawWidth": 641,
+      "rawHeight": 643,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
