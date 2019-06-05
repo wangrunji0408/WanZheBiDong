@@ -6,6 +6,7 @@ type State = DialogInfo | ChapterInfo | QuestionInfo | EndingInfo;
 /// Game logic state machine
 export default class GameManager {
 	scenes: { [id: number]: State } = {};
+	lastID: number = 0;
 	currentID: number = GameManager.INIT_SCENE_ID;
 	numbers: NumberSystem = new NumberSystem();
 
@@ -38,7 +39,8 @@ export default class GameManager {
 	}
 
 	reset() {
-		this.currentID = 1;
+		this.lastID = 0;
+		this.currentID = GameManager.INIT_SCENE_ID;
 	}
 
 	get(): State {
@@ -77,6 +79,7 @@ export default class GameManager {
 	}
 
 	goTo(sceneID: number) {
+		this.lastID = this.currentID;
 		this.currentID = sceneID;
 		console.debug(`goto: ${this.currentID}`);
 		// check new sceneID

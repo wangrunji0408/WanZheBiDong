@@ -161,6 +161,7 @@ export default class UIController extends cc.Component {
             this.questionUIController.activate(scene);
         } else if(scene instanceof EndingInfo) {
             EndingUIController.ending = scene;
+            EndingUIController.lastSceneID = this.gameManager.lastID;
             cc.director.loadScene("ending");
         }
         this.numberUIController.updateUI(this.gameManager.numbers);

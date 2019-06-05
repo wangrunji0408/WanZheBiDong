@@ -1,5 +1,5 @@
 import UIController from "./UIController";
-import { EndingInfo } from "./Data";
+import { EndingInfo, UserData } from "./Data";
 
 const {ccclass, property} = cc._decorator;
 
@@ -20,6 +20,7 @@ export default class EndingUIController extends cc.Component {
 
     // set by UIController
     static ending: EndingInfo = null;
+    static lastSceneID: number = 0;
 
     start() {
         let ending = EndingUIController.ending;
@@ -35,8 +36,10 @@ export default class EndingUIController extends cc.Component {
         });
     }
 
-    onButtonClicked(_event: TouchEvent, customEventData: string) {
-        let sceneID = parseInt(customEventData);
+    onRetryButtonClicked(_event: TouchEvent, _customEventData: string) {
+        let chapterID = Math.floor(EndingUIController.lastSceneID / 1000);
+        let sceneID = chapterID * 1000;
+        UIController.initNumber = UserData.value.numbers[chapterID];
         UIController.initSceneID = sceneID;
         cc.director.loadScene("dialog");
     }
