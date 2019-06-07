@@ -74,7 +74,7 @@ export default class DialogUIController extends cc.Component {
             this.buttonLabel1.string = dialog.buttons[0].text;
             this.buttonLabel2.string = dialog.buttons[1].text;
         }
-        this.time = 0;  // reset time
+        this.time = isTitle? 100000: 0;  // reset time
         this.textLabel.string = '';
         this.speakerLabel.string = dialog.speaker;
         this.updateLihui(dialog.avatar);
