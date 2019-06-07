@@ -15,8 +15,8 @@ export default class DialogUIController extends cc.Component {
     @property(cc.Label)
     buttonLabel2: cc.Label = null;
 
-    @property(cc.Label)
-    textLabel: cc.Label = null;
+    @property(cc.RichText)
+    textLabel: cc.RichText = null;
 
     @property(cc.Label)
     speakerLabel: cc.Label = null;
@@ -61,7 +61,7 @@ export default class DialogUIController extends cc.Component {
         if(this.dialog === null) {
             return;
         }
-        this.textLabel.string = this.dialog.text.substr(0, this.showLength);
+        this.textLabel.string = `<color=black>${this.dialog.text.substr(0, this.showLength)}</color>`;
         this.buttonGroup.active = this.dialog.buttons.length >= 2 && !this.isTyping;
     }
 

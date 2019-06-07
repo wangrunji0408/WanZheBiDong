@@ -14,8 +14,8 @@ export default class ChapterUIController extends cc.Component {
     @property(cc.Node)
     textRegion: cc.Node = null;
 
-    @property(cc.Label)
-    textLabel: cc.Label = null;
+    @property(cc.RichText)
+    textLabel: cc.RichText = null;
 
     @property(cc.Label)
     commentLabel: cc.Label = null;
@@ -131,10 +131,31 @@ export default class ChapterUIController extends cc.Component {
         const CHAR_PER_LINE = 15;
         let lines = [];
         for(let line of text.split('\\n')) {
-            lines.push(line.substr(0, CHAR_PER_LINE + 1));
-            for(let i=CHAR_PER_LINE + 1; i<line.length; i+=CHAR_PER_LINE) {
-                lines.push('　' + line.substr(i, CHAR_PER_LINE));
+            let s = '<color=black>';
+            let red = false;
+            let char_count = 0;
+            for(let i=0; i<line.length;) {
+                if(line.substr(i, 14) === '<color=red><b>') {
+                    red = true;
+                    i += 14;    // skip
+                } else if(line.substr(i, 12) === '</b></color>') {
+                    red = false;
+                    i += 12;    // skip
+                } else {
+                    if(red) s += '<color=red><b>';
+                    s += line[i];
+                    if(red) s += '</b></color>';
+                    char_count += 1;
+                    i += 1;
+                }
+                if(char_count === CHAR_PER_LINE + 1) {
+                    lines.push(s + '</color>');
+                    // reset
+                    s = '　<color=black>';
+                    char_count = 1;
+                }
             }
+            lines.push(s + '</color>');
         }
         return lines;
     }
@@ -152,7 +173,7 @@ export default class ChapterUIController extends cc.Component {
             let node = cc.instantiate(this.textLabel.node);
             node.setParent(this.textRegion);
             node.setPosition(-i * DELTA_X, 0); 
-            node.getComponent(cc.Label).string = this.lines[idx];
+            node.getComponent(cc.RichText).string = this.lines[idx];
         };
         // show buttons
         let isFirstPage = this.pageID === 0;
